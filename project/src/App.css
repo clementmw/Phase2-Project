@@ -1,5 +1,5 @@
 .App {
-  margin-left: 10px;
+  margin-left: 0px;
 }
 
 .App-logo {
@@ -21,6 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  
   color: white;
 }
 
@@ -36,6 +37,27 @@
     transform: rotate(360deg);
   }
 }
-NavLink {
+ div .container-fluid {
+  background-color: rgba(108, 241, 55, 0.863);
+  min-height: 60px;
+  border-radius: 7px;
+  font-size: 25px;
+  width:100% ;
+  padding: 10px;
   
-}
+  
+ }
+  h1{
+    margin-left: 15px;
+  
+  }
+  div .card{
+    margin-top: 20px;
+    margin-left: 45px;
+  }
+  
+    
+  
+    
+  
+  
