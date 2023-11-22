@@ -1,48 +1,80 @@
-import react from 'react'
-// import  nav  from 'react-bootstrap';
-import "bootstrap/dist/css/bootstrap.min.css"
+import React, { useState } from 'react';
 
- 
-function NavBar () {
-    return (
-        
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-5 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active "  href="/cart">Cart</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Categories
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></hr></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+function NavBar({ products, onCategoryChange }) {
+  const [selectedCategory, setSelectedCategory] = useState('');
+  const uniqueCategories = [...new Set(products.map((product) => product.category))];
+
+  const handleCategoryChange = (e) => {
+    const selectedValue = e.target.value;
+    setSelectedCategory(selectedValue);
+    onCategoryChange(selectedValue);
+  };
+
+  const handleSearch = () => {
+    // Add your search functionality here
+    // You can use the searchInput state to get the search input value
+    console.log('Search button clicked');
+  };
+
+  const categoryList = (
+    <select onChange={handleCategoryChange} value={selectedCategory}>
+      <option value=''>Categories</option>
+      {uniqueCategories.map((category) => (
+        <option key={category} value={category}>
+          {category}
+        </option>
+      ))}
+    </select>
+  );
+
+  return (
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="container-fluid">
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-5 mb-lg-0">
+            <li className="nav-item">
+              <a className="nav-link active" href="/">
+                Home
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link active" href="/cart">
+                Cart
+              </a>
+            </li>
+
+            {categoryList}
           </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
-        </li>
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
-        
-    )
+          <form className="d-flex">
+            <input
+              className="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button
+              type="button"
+              className="btn btn-success"
+              onClick={handleSearch}
+            >
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  );
 }
- 
+
 export default NavBar;

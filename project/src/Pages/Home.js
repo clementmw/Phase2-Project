@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Home({ products }) {
+function Home({ products, filter }) {
   const [expanded, setExpanded] = useState(false);
 
   const toggleDescription = () => {
@@ -13,6 +13,7 @@ function Home({ products }) {
         <img src={product.image} className='card-img-top' alt='Product' />
         <div className='card-body'>
           <h5 className='card-title'>{product.title}</h5>
+          <h5 className='card-title'>{product.category}</h5>
           <p className='card-text'>
             {expanded ? product.description : `${product.description.slice(0, 100)}...`}
           </p>
@@ -22,11 +23,13 @@ function Home({ products }) {
             </button>
           )}
           <p className='card-text'>Price: ${product.price}</p>
-          <a href='#' className='btn btn-primary'>
-            Add to cart
-          </a>
+
+          <button type='submit' className='btn btn-primary'> Add to cart</button>
+           
+         
         </div>
       </div>
+    
     </div>
   ));
 
