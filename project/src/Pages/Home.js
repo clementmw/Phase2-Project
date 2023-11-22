@@ -10,7 +10,7 @@ function Home({ products, filter }) {
   const productList = products.map((product) => (
     <div className='col-md-3' key={product.id}>
       <div className='card'>
-        <img src={product.image} className='card-img-top' alt='Product' style={{width:'300px', height:'400px'}} />
+        <img src={product.image} className='card-img-top' alt='Product' style={{width:'300px', height:'300px'}} />
         <div className='card-body'>
           <h5 className='card-title'>{product.title}</h5>
           <h5 className='card-title'>{product.category}</h5>
@@ -35,7 +35,7 @@ function Home({ products, filter }) {
 
   return (
     <div>
-      <h1>SwiftCart</h1>
+      
       <div className='row'>{productList}</div>
     </div>
   );

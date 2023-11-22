@@ -5,6 +5,7 @@ import NavBar from './Components/NavBar';
 import { Routes, Route } from 'react-router-dom';
 import Cart from './Pages/Cart';
 import ProductList from './Components/ProductList';
+import Header from './Components/Header';
 
 function App() {
   const [product, getProduct] = useState([]);
@@ -26,6 +27,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header/>
       <NavBar products={product} onCategoryChange={handleCategoryChange} />
       <Routes>
         <Route path='/' element={<Home products={filteredProducts.length > 0 ? filteredProducts : product}/>} />
