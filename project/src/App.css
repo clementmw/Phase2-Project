@@ -38,7 +38,7 @@
   }
 }
  div .container-fluid {
-  background-color: rgba(108, 241, 55, 0.863);
+  background-color:rgb(85, 85, 233);
   min-height: 60px;
   border-radius: 7px;
   font-size: 25px;
@@ -56,10 +56,13 @@
   div .card{
     margin-top: 20px;
     margin-left: 100px;
+  
   }
   li{
     padding-inline-start: 25px;
   }
+
+  
     
   
     

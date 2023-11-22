@@ -23,7 +23,7 @@ function App() {
 
       <NavBar/>
       <Routes>
-      <Route path='/' element={<Home/>}></Route>
+      <Route path='/' element={<Home  products = {product}/>}></Route>
       <Route path='/cart' element={<Cart/>}></Route>
       </Routes>
 
