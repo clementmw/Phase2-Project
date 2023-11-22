@@ -62,7 +62,10 @@
     padding-inline-start: 25px;
   }
 
-  
+  select {
+    background-color:rgb(85, 85, 233);
+    border-color: rgb(85, 85, 233);
+  }
     
   
     

@@ -54,7 +54,7 @@ function NavBar({ products, onCategoryChange }) {
               </a>
             </li>
 
-            {categoryList}
+          {categoryList}
           </ul>
           <form className="d-flex">
             <input
