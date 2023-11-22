@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  margin-left: 0px;
 }
 
 .App-logo {
@@ -21,6 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  
   color: white;
 }
 
@@ -36,3 +37,31 @@
     transform: rotate(360deg);
   }
 }
+ div .container-fluid {
+  background-color: rgba(108, 241, 55, 0.863);
+  min-height: 60px;
+  border-radius: 7px;
+  font-size: 25px;
+  width:100% ;
+  padding: 0px;
+  padding-left: 120px;
+
+  
+  
+ }
+  h1{
+    margin-left: 40px;
+  
+  }
+  div .card{
+    margin-top: 20px;
+    margin-left: 100px;
+  }
+  li{
+    padding-inline-start: 25px;
+  }
+    
+  
+    
+  
+  
