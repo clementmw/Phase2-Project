@@ -1,5 +1,7 @@
 .App {
   margin-left: 0px;
+  
+  background-size: cover;
 }
 
 .App-logo {
@@ -38,7 +40,7 @@
   }
 }
  div .container-fluid {
-  background-color:rgb(85, 85, 233);
+  background-color: rgb(85, 85, 233);
   min-height: 60px;
   border-radius: 7px;
   font-size: 25px;
@@ -46,18 +48,33 @@
   padding: 0px;
   padding-left: 120px;
 
+
   
   
  }
   h1{
-    margin-left: 40px;
+    margin-left: 90px;
+    font-style: italic;
+    font-family:'Times New Roman', Times, serif;
+    font-size:50px
   
   }
   div .card{
     margin-top: 20px;
     margin-left: 100px;
+    align-items: center;
+    border-radius: 10px;
+    border-width: 0px;
+    box-shadow:3px 3px 15px; 
   
   }
+  .card:hover{
+    border-color: black;
+    border-width:1px;
+
+  }
+
+  
   li{
     padding-inline-start: 25px;
   }
@@ -67,6 +84,10 @@
   }
 
   
+    
+  .nav-item{
+    
+  }
     
   
     
