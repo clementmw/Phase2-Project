@@ -24,7 +24,7 @@ const Cart = () => {
                             return(
                                 <tr key={index}>
                                     <td>
-                                        <img src={item.img} />
+                                    <img src={item.image} alt={item.title} style={{ maxWidth: '250px', maxHeight: '150px' }} />
                                     </td>
                                     <td>{item.title}</td>
                                     <td>{item.price}</td>
