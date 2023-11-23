@@ -5,10 +5,10 @@ import NavBar from './Components/NavBar';
 import {Routes , Route} from 'react-router-dom'
 import Cart from './Pages/Cart';
 import ProductList from './Components/ProductList';
-
+import { CartProvider } from "react-use-cart"
 
 function App() {
-    const[product, getProduct] = useState([])
+    const[products, getProduct] = useState([])
 
     useEffect(()=>{
       fetch('https://fakestoreapi.com/products')
@@ -16,21 +16,20 @@ function App() {
             .then(json=>getProduct(json))
 
     }, []);
-    console.log(product)
+    console.log(products)
 
   return (
     <div className="App">
-
-      <NavBar/>
-      <Routes>
-      <Route path='/' element={<Home  products = {product}/>}></Route>
-      <Route path='/cart' element={<Cart/>}></Route>
-      </Routes>
-
-      <h1>project</h1>
-      <ProductList/>
-
-      
+      <>
+        <CartProvider>
+          <NavBar/>
+          <Routes>
+            <Route path='/' element={<Home  products = {products}/>}></Route>
+            <Route path='/cart' element={<Cart/>}></Route>
+          </Routes>
+          <ProductList/>
+        </CartProvider>
+      </>
     </div>
   );
 }

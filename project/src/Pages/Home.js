@@ -1,10 +1,20 @@
 import React, { useState } from 'react';
+import { useCart } from 'react-use-cart';
 
 function Home({ products }) {
   const [expanded, setExpanded] = useState(false);
+  const { addItem, removeItem, inCart } = useCart();
 
   const toggleDescription = () => {
     setExpanded(!expanded);
+  };
+
+  const handleClick = (product) => {
+    if (inCart(product.id)) {
+      removeItem(product.id);
+    } else {
+      addItem(product);
+    }
   };
 
   const productList = products.map((product) => (
@@ -22,9 +32,12 @@ function Home({ products }) {
             </button>
           )}
           <p className='card-text'>Price: ${product.price}</p>
-          <a href='#' className='btn btn-primary'>
-            Add to cart
-          </a>
+          <button
+            className={inCart(product.id) ? 'btn btn-danger' : 'btn btn-primary'}
+            onClick={() => handleClick(product)}
+          >
+            {inCart(product.id) ? 'Remove from cart' : 'Add to cart'}
+          </button>
         </div>
       </div>
     </div>
@@ -32,7 +45,7 @@ function Home({ products }) {
 
   return (
     <div>
-      <h1>SwiftCart</h1>
+      <h1 className='text-center'>SwiftCart</h1>
       <div className='row'>{productList}</div>
     </div>
   );
