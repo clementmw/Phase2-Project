@@ -24,7 +24,7 @@ const Cart = () => {
                             return(
                                 <tr key={index}>
                                     <td>
-                                        <img src={item.img} />
+                                        <img src={item.image} style={{height: '6rem'}}/>
                                     </td>
                                     <td>{item.title}</td>
                                     <td>{item.price}</td>
@@ -49,7 +49,7 @@ const Cart = () => {
                 </table>
               </div>
               <div>
-                <h2>Total Price: {cartTotal}</h2>
+                <h2>Total Price: {cartTotal.toFixed(2)}</h2>
               </div>
               <div>
                 <button

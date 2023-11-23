@@ -68,12 +68,6 @@
     box-shadow:3px 3px 15px; 
   
   }
-  .card:hover{
-    border-color: black;
-    border-width:1px;
-
-  }
-
   
   li{
     padding-inline-start: 25px;
@@ -84,10 +78,6 @@
   }
 
   
-    
-  .nav-item{
-    
-  }
     
   
     

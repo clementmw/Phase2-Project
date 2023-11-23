@@ -1,19 +1,25 @@
 import React, { useState } from 'react';
+import { useCart } from 'react-use-cart';
 
 function Home({ products }) {
   const [expanded, setExpanded] = useState({});
-
+  const { addItem, removeItem, inCart } = useCart();
   const toggleDescription = (id) => {
     setExpanded((prevExpanded) => ({
       ...prevExpanded,    //use the spread operator//
       [id]: !prevExpanded[id],
     }));
   };
-  
+
+  const handleClick = (product) => {
+    if (inCart(product.id)) {
+      removeItem(product.id);
+    } else {
+      addItem(product);
+    }
+  };
 
   const productList = products.map((product) => (
-
-
     <div className='col-md-3 mb-4' key={product.id}>
       <div className='card h-100'>
         <img
@@ -42,9 +48,11 @@ function Home({ products }) {
           )}
           <p className='card-text'>Price: ${product.price}</p>
 
-
-          <button type='submit' className='btn btn-primary'>
-            Add to cart
+          <button
+            className={inCart(product.id) ? 'btn btn-danger' : 'btn btn-primary'}
+            onClick={() => handleClick(product)}
+          >
+            {inCart(product.id) ? 'Remove from cart' : 'Add to cart'}
           </button>
         </div>
       </div>
