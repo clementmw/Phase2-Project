@@ -20,6 +20,12 @@ function Home({ products }) {
   };
 
   const productList = products.map((product) => (
+
+    <div className='col-md-3' key={product.id}>
+      <div className='card'>
+        <img src={product.image} className='card-img-top' alt='Product' style={{width:'300px', height:'300px'}} />
+        <div className='card-body'>
+
     <div className='col-md-3 mb-4' key={product.id}>
       <div className='card h-100'>
         <img
@@ -29,6 +35,7 @@ function Home({ products }) {
           style={{ height: '200px', objectFit: 'cover' }}
         />
         <div className='card-body d-flex flex-column'>
+
 
 
           <h5 className='card-title'>{product.title}</h5>

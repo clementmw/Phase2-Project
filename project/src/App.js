@@ -4,7 +4,13 @@ import Home from './Pages/Home';
 import NavBar from './Components/NavBar';
 import { Routes, Route } from 'react-router-dom';
 import Cart from './Pages/Cart';
+
+import ProductList from './Components/ProductList';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+
 import { CartProvider } from 'react-use-cart';
+
 
 
 function App() {
@@ -32,15 +38,26 @@ function App() {
   return (
     <div className="App">
 
+      <Header />
+      <NavBar products={product} onCategoryChange={handleCategoryChange} />
+
+
       <CartProvider>
       <NavBar products={product} onCategoryChange={handleCategoryChange} onSearch={handleSearch} />
+
       <Routes>
         <Route path='/' element={<Home products={filteredProducts.length > 0 ? filteredProducts : product} />} />
         <Route path='/cart' element={<Cart />} />
       </Routes>
 
+    <Footer />
+      
+      
+
+
       </CartProvider>
      
+
       
     </div>
   );
