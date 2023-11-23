@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 
-function NavBar({ products, onCategoryChange }) {
+function NavBar({ products, onCategoryChange, onSearch }) {
   const [selectedCategory, setSelectedCategory] = useState('');
   const uniqueCategories = [...new Set(products.map((product) => product.category))];
+  const [searchedProduct, setSearchedProduct] = useState('');
 
   const handleCategoryChange = (e) => {
     const selectedValue = e.target.value;
@@ -10,11 +11,16 @@ function NavBar({ products, onCategoryChange }) {
     onCategoryChange(selectedValue);
   };
 
-  const handleSearch = () => {
-    // Add your search functionality here
-    // You can use the searchInput state to get the search input value
-    console.log('Search button clicked');
+  const handleSearchInput = (e) => {
+    const inputText = e.target.value;
+    setSearchedProduct(inputText);
+    onSearch(inputText); // Use the onSearch prop to update the search term in the parent component
   };
+
+  // const handleSearch = () => {
+  //   // Implement your search functionality here if needed
+  //   console.log('Search button clicked');
+  // };
 
   const categoryList = (
     <select onChange={handleCategoryChange} value={selectedCategory}>
@@ -42,7 +48,7 @@ function NavBar({ products, onCategoryChange }) {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-5 mb-lg-0">
+          <ul className="navbar-nav me-auto mb- mb-lg-0">
             <li className="nav-item">
               <a className="nav-link active" href="/">
                 Home
@@ -60,16 +66,18 @@ function NavBar({ products, onCategoryChange }) {
             <input
               className="form-control me-2"
               type="search"
-              placeholder="Search"
+              placeholder="Search Product"
               aria-label="Search"
+              onChange={handleSearchInput}
+              value={searchedProduct}
             />
-            <button
+            {/* <button
               type="button"
               className="btn btn-success"
-              onClick={handleSearch}
+              onClick={onSearch}
             >
               Search
-            </button>
+            </button> */}
           </form>
         </div>
       </div>

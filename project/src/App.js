@@ -4,13 +4,19 @@ import Home from './Pages/Home';
 import NavBar from './Components/NavBar';
 import { Routes, Route } from 'react-router-dom';
 import Cart from './Pages/Cart';
+
 import ProductList from './Components/ProductList';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 
+import { CartProvider } from 'react-use-cart';
+
+
+
 function App() {
   const [product, getProduct] = useState([]);
-  const [filteredProducts, setfFilterProduct] = useState([])
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [searchedProduct, setSearchedProduct] = useState('');
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products/')
@@ -18,25 +24,40 @@ function App() {
       .then((json) => getProduct(json));
   }, []);
 
-  console.log(product);
-
-
   const handleCategoryChange = (selectedCategory) => {
-    const filteredProducts = product.filter((product) => product.category === selectedCategory);
-        setfFilterProduct(filteredProducts)
+    const filteredProductsByCategory = product.filter((product) => product.category === selectedCategory);
+    setFilteredProducts(filteredProductsByCategory);
+  };
+
+  const handleSearch = (searchedText) => {
+    setSearchedProduct(searchedProduct);
+    const filteredProductsBySearch = product.filter((product) => product.title.toLowerCase().includes(searchedText.toLowerCase()));
+    setFilteredProducts(filteredProductsBySearch);
   };
 
   return (
     <div className="App">
+
       <Header />
       <NavBar products={product} onCategoryChange={handleCategoryChange} />
+
+
+      <CartProvider>
+      <NavBar products={product} onCategoryChange={handleCategoryChange} onSearch={handleSearch} />
+
       <Routes>
-        <Route path='/' element={<Home products={filteredProducts.length > 0 ? filteredProducts : product}/>} />
+        <Route path='/' element={<Home products={filteredProducts.length > 0 ? filteredProducts : product} />} />
         <Route path='/cart' element={<Cart />} />
       </Routes>
-      <Footer />
+
+    <Footer />
       
       
+
+
+      </CartProvider>
+     
+
       
     </div>
   );
