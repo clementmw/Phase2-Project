@@ -68,6 +68,14 @@
     box-shadow:3px 3px 15px; 
   
   }
+
+  .card:hover{
+    border-color: black;
+    border-width:1px;
+
+  }
+
+
   
   li{
     padding-inline-start: 25px;
@@ -79,7 +87,66 @@
 
   
     
-  
+  .footer {
+    background-color: #f2f2f2;
+    padding:80px;
+    font-size: 30px;
+    font-style: italic;
+}
+
+.footer-content {
+    color:black;
+    align-items: center;
+    text-align: center;
     
+    
+    
+    
+
+
   
+}
+
+
+
+
+
+.social-icons a {
+    text-decoration: none;
+    
+    color: #333;
+    margin: 0 10px; 
+    margin-top: 10px;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.social-icons a:hover {
+    color: #007bff;
+}
+ 
+  
+  
+  
+ 
+  /* YourComponentStyles.css */
+.payment-icons {
+  
+  
+  margin-bottom: 10px; /* Adding some bottom margin for spacing */
+}
+
+.payment-icons > * {
+  margin: 0 10px; 
+  margin-top: 10px;/* Adjust the horizontal space between icons */
+}
+.icons{
+  margin-top: 10px;
+  
+}
+  
+
+  
+
   
