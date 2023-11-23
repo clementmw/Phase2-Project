@@ -92,7 +92,10 @@
 }
 
 .footer-content {
-    display :
+    color:black;
+    align-items: center;
+    text-align: center;
+    
     
     
     
@@ -112,7 +115,7 @@
     margin: 0 10px; 
     margin-top: 10px;
     align-items: center;
-    
+    text-align: center;
     
 }
 
