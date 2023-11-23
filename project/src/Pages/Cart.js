@@ -24,7 +24,7 @@ const Cart = () => {
                             return(
                                 <tr key={index}>
                                     <td>
-                                        <img src={item.image} style={{height: '6rem'}}/>
+                                        <img src={item.image} alt="" style={{height: '6rem'}}/>
                                     </td>
                                     <td>{item.title}</td>
                                     <td>{item.price}</td>
@@ -55,7 +55,7 @@ const Cart = () => {
                 <button
                     onClick={() => emptyCart()}
                 >Clear Cart</button>
-                <button>Buy Now</button>
+                
               </div>
             </div>
         </section>

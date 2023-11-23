@@ -4,6 +4,7 @@ import { useCart } from 'react-use-cart';
 function Home({ products }) {
   const [expanded, setExpanded] = useState({});
   const { addItem, removeItem, inCart } = useCart();
+  
   const toggleDescription = (id) => {
     setExpanded((prevExpanded) => ({
       ...prevExpanded,    //use the spread operator//
@@ -32,7 +33,7 @@ function Home({ products }) {
 
 
           <h5 className='card-title'>{product.title}</h5>
-          <h6 className='card-title'>{product.category.toUpperCase()}</h6>
+          <h5 className='card-title'>{product.category.toUpperCase()}</h5>
           <p className='card-text flex-grow-1'>
             {expanded[product.id]
               ? product.description

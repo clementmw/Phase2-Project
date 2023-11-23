@@ -17,10 +17,6 @@ function NavBar({ products, onCategoryChange, onSearch }) {
     onSearch(inputText); // Use the onSearch prop to update the search term in the parent component
   };
 
-  // const handleSearch = () => {
-  //   // Implement your search functionality here if needed
-  //   console.log('Search button clicked');
-  // };
 
   const categoryList = (
     <select onChange={handleCategoryChange} value={selectedCategory}>
@@ -32,6 +28,7 @@ function NavBar({ products, onCategoryChange, onSearch }) {
       ))}
     </select>
   );
+
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -47,6 +44,7 @@ function NavBar({ products, onCategoryChange, onSearch }) {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb- mb-lg-0">
             <li className="nav-item">
@@ -59,9 +57,11 @@ function NavBar({ products, onCategoryChange, onSearch }) {
                 Cart
               </a>
             </li>
+             
 
           {categoryList}
           </ul>
+
           <form className="d-flex">
             <input
               className="form-control me-2"
@@ -71,13 +71,7 @@ function NavBar({ products, onCategoryChange, onSearch }) {
               onChange={handleSearchInput}
               value={searchedProduct}
             />
-            {/* <button
-              type="button"
-              className="btn btn-success"
-              onClick={onSearch}
-            >
-              Search
-            </button> */}
+           
           </form>
         </div>
       </div>
