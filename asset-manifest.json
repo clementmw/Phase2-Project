@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Phase2-Project/static/css/main.deb098f1.css",
+    "main.js": "/Phase2-Project/static/js/main.549bc786.js",
+    "static/js/787.917857b7.chunk.js": "/Phase2-Project/static/js/787.917857b7.chunk.js",
+    "index.html": "/Phase2-Project/index.html",
+    "main.deb098f1.css.map": "/Phase2-Project/static/css/main.deb098f1.css.map",
+    "main.549bc786.js.map": "/Phase2-Project/static/js/main.549bc786.js.map",
+    "787.917857b7.chunk.js.map": "/Phase2-Project/static/js/787.917857b7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.deb098f1.css",
+    "static/js/main.549bc786.js"
+  ]
+}
