@@ -1,13 +1,9 @@
+import React from 'react'
 
-import react from 'react'
-
-function Header () {
-    return (
-        <div>
-        <h1> SwiftCart</h1>
-        </div>
-    )
+function Header() {
+  return (
+    <h1>SwiftCart</h1>
+  )
 }
 
 export default Header
-

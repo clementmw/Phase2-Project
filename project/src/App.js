@@ -41,7 +41,7 @@ function App() {
       <CartProvider>
       <NavBar products={product} onCategoryChange={handleCategoryChange} onSearch={handleSearch} />
 
-      <Routes>
+      <Routes basename = "/Phase2-Project">
         <Route path='/' element={<Home products={filteredProducts.length > 0 ? filteredProducts : product} />} />
         <Route path='/cart' element={<Cart />} />
       </Routes>
