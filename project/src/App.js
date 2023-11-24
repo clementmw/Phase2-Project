@@ -37,19 +37,16 @@ function App() {
   return (
     <div className="App">
 
-      <Header />
       <CartProvider>
+      <Header />
       <NavBar products={product} onCategoryChange={handleCategoryChange} onSearch={handleSearch} />
-
       <Routes basename = "/Phase2-Project">
-        <Route path='/' element={<Home products={filteredProducts.length > 0 ? filteredProducts : product} />} />
+         <Route path='*' element={<Home products={filteredProducts.length > 0 ? filteredProducts : product} />} />
+        <Route path='/home' element={<Home products={filteredProducts.length > 0 ? filteredProducts : product} />} />
         <Route path='/cart' element={<Cart />} />
       </Routes>
-
-    <Footer />
+      <Footer/>
       
-      
-
 
       </CartProvider>
      
